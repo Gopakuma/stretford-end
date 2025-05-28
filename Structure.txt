@@ -1,0 +1,15 @@
+project/
+├── app.js              # Main application
+├── modules/            # Feature modules
+│   ├── users/          # User module
+│   │   ├── routes.js   # User routes
+│   │   ├── controller.js
+│   │   └── index.js    # Module entry point
+│   │
+│   ├── products/       # Product module
+│   │   ├── routes.js
+│   │   └── ...
+│   └── auth/           # Auth module
+│       ├── routes.js
+│       └── ...
+└── package.json

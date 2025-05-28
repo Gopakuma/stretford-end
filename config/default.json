@@ -1,0 +1,13 @@
+{
+    "server": {
+        "port": 3000,
+        "host": "localhost"
+    },
+    "database": {
+        "host": "localhost",
+        "port": 1433,
+        "name": "PlayerRatings",
+        "user": "SA",
+        "password": "Gopu@1234"    
+    }
+}
