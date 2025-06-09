@@ -8,6 +8,9 @@
         "port": 1433,
         "name": "PlayerRatings",
         "user": "SA",
-        "password": "Gopu@1234"    
+        "password": "teddy123"    
+    },
+    "api": {
+        "baseURL" : "/api/v1"
     }
 }
