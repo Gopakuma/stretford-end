@@ -4,6 +4,7 @@ import config from 'config';
 import { Tserver } from './Types/CommonTypes.js'
 import { Router } from "express";
 import Routes from './src/Routes/Router.js';
+import cors from 'cors';
 
 const server: Tserver = config.get('server');
 const { port } = server;
@@ -12,6 +13,13 @@ const app = express();
 
 //middlewares
 app.use(express.json());
+
+// Allow CORS for all origins
+app.use(cors());
+
+// Handle preflight requests manually
+app.options("*", cors()); // Respond to OPTIONS requests
+
 
 //Setup Routes
 const router = Router();

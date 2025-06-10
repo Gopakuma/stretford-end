@@ -1,15 +1,12 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "./AuthProvider";
 
-
-function Signup() {
+function Login() {
   const [formdata, setFormdata] = useState({
     email: '',
-    username: ''
+    password: ''
   })
-  const { login } = useAuth(); 
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -19,19 +16,17 @@ function Signup() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormdata({ ...formdata, [e.target.name]: e.target.value });
-    callSignupAPI();
+    callLoginAPI();
   }
 
-  const callSignupAPI = async () => {
+  const callLoginAPI = async () => {
     try {      
       const res = await axios.post('http://localhost:3000/api/v1/users/signup', formdata);
       if(res.statusText == 'Accepted'){
         navigate('/dashboard');
-        login('token');
       }
       console.log(res);
     } catch (error) {
-      navigate('/');
       console.log(error);
     }
   }
@@ -39,9 +34,8 @@ function Signup() {
 
   function handleOnclick(e) {
     e.preventDefault();
-    navigate('/login');
+    navigate('/');
   }
-
 
   return (
     <>
@@ -49,17 +43,14 @@ function Signup() {
         <label>Type your email here
           <input onChange={handleChange} name='email' type="text" />
         </label>
-        <label>User Name
-          <input onChange={handleChange} name='username' type="text" />
-        </label>
         <label>Password
           <input onChange={handleChange} name='password' type="text" />
         </label>
         <button onSubmit={handleSubmit}>DONE</button>
-        <button onClick={handleOnclick}>Login</button>
+        <button onClick={handleOnclick}>Signup</button>
       </form>
     </>
   )
 }
 
-export default Signup;
+export default Login;
