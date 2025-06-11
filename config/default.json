@@ -12,5 +12,16 @@
     },
     "api": {
         "baseURL" : "/api/v1"
+    },
+    "bcrypt" : {
+        "saltRounds" : 10,
+        "hash": "abcdefgh123"
+    },
+    "auth" : {
+        "JWT_SECRET": "secretofomnitrix123",
+        "JWT_EXPIRES_IN": "1h"
+    },
+    "nodemailer" : {
+        "token" : "15d96ec78ec9fd6badac06047be16645"
     }
 }

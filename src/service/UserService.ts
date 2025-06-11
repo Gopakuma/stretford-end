@@ -1,9 +1,10 @@
-import { TuserDto } from "../../Types/CommonTypes.js";
-import { User } from '../../Database/models/User.js';
 import { sequelize } from "../../Database/DB.js";
+import { callNodeMailerService, checkHashPassword, generateToken } from "../../utils/utils.js";
+import User from '../../Database/models/User.js';
+import { TResponseDTO } from "../../Types/CommonTypes.js";
 
 class UserService {
-    async signup(userDto: TuserDto) {
+    async signup(userDto: User): Promise<TResponseDTO> {
         if (!userDto || !userDto.email) {
             throw new Error("Invaild User data");
         }
@@ -11,13 +12,22 @@ class UserService {
         const transaction = await sequelize.transaction();
 
         try {
-            const user = await User.findOrCreate({
+            const [user, created] = await User.findOrCreate({
                 where: { email: userDto.email },
                 defaults: userDto,
                 transaction
             })
             await transaction.commit();
-            return user;
+            const response: TResponseDTO = {
+                data: {
+                    email: user.email,
+                    username: user.username
+                },
+                token: generateToken(user.id),
+                success: created
+            }
+
+            return response;
         } catch (error) {
             await transaction.rollback();
             console.log(error);
@@ -25,7 +35,7 @@ class UserService {
         }
     }
 
-    async deleteUser(userDto: TuserDto) {
+    async deleteUser(userDto: User) {
         if (!userDto || !userDto.email) {
             throw new Error("Invaild User data");
         }
@@ -46,6 +56,42 @@ class UserService {
             throw error;
         }
     }
+
+    async login(userDto: User): Promise<TResponseDTO> {
+        if (!userDto || !userDto.email) {
+            throw new Error("Invaild User data");
+        }
+
+        try {
+            const user: User = await User.findOne({
+                where: { email: userDto.email },
+            });
+
+            const isMatch = await checkHashPassword(userDto, user.password);
+            if (!isMatch) throw new Error("Invalid email or password");
+
+            const response: TResponseDTO = {
+                data: {
+                    email: user.email,
+                    username: user.username
+                },
+                token: generateToken(user.id),
+                success: isMatch
+            }
+
+            return response;
+        } catch (error) {
+            console.log(error);
+            throw error;
+        }
+    }
+
+    async notification(userDto: User): Promise<Boolean> {
+        const res = callNodeMailerService(userDto);
+        console.log(res);
+        return true;
+    }
+
 }
 
 export default UserService;

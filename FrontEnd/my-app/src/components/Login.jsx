@@ -1,13 +1,17 @@
 import axios from "axios";
+import { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "./AuthProvider";
 
 function Login() {
   const [formdata, setFormdata] = useState({
     email: '',
     password: ''
   })
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
+  const { login } = useAuth(); 
 
   const handleChange = (e) => {
     setFormdata({ ...formdata, [e.target.name]: e.target.value });
@@ -20,12 +24,14 @@ function Login() {
   }
 
   const callLoginAPI = async () => {
-    try {      
-      const res = await axios.post('http://localhost:3000/api/v1/users/signup', formdata);
-      if(res.statusText == 'Accepted'){
-        navigate('/dashboard');
-      }
-      console.log(res);
+    try {
+      const res = await axios.post('http://localhost:3000/api/v1/users/login', formdata);
+      if (res.statusText == 'Accepted') {
+        setIsLoggedIn(true);
+        login(res.data.token)
+        localStorage.setItem(email,res.data.email)
+        localStorage.setItem(email,res.data.password)
+      } 
     } catch (error) {
       console.log(error);
     }
@@ -36,6 +42,10 @@ function Login() {
     e.preventDefault();
     navigate('/');
   }
+
+  useEffect(() => {
+    if (isLoggedIn) navigate("/dashboard");
+  }, [isLoggedIn, navigate]);
 
   return (
     <>

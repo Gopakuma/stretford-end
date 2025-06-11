@@ -15,8 +15,11 @@ export type TconfigApi = {
     baseURL: string;
 }
 
-export type TuserDto = {
-    email: string;
-    userName: string;
-    password: string;
+export interface TResponseDTO {
+    data?: {
+        email: string,
+        username: string,
+    }
+    token?: string
+    success?: boolean
 }
