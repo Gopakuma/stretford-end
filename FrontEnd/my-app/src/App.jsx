@@ -5,7 +5,7 @@ import NotificationSettings from './components/NotificationSettings';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import ProtectedRoute from './components/ProtectedRoute';
-
+ 
 
 function App() {
   return (
