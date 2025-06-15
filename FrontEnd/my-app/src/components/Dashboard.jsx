@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import './style/Dashboard.css'
 import LogoutButton from './LogoutButton';
+import NewsFeed from './NewsFeed';
 
 function Dashboard() {
     const navigate = useNavigate();
@@ -16,6 +17,7 @@ function Dashboard() {
                     notification settings
                 </button>
                 <LogoutButton/>
+                <NewsFeed/>
             </div>
         </>
     )

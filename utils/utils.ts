@@ -4,6 +4,7 @@ import User from '../Database/models/User.js';
 import jwt from "jsonwebtoken";
 import nodemailer from 'nodemailer';
 import axios from 'axios';
+import Scrap from './Scrap.js';
 
 const auth: any = config.get("auth");
 
@@ -54,8 +55,6 @@ export const callNodeMailerService = (userDto: User) => {
         }
     });
 
-
-
     // Configure the mailoptions object
     const mailOptions = {
         from: 'hello@demomailtrap.co',
@@ -68,19 +67,47 @@ export const callNodeMailerService = (userDto: User) => {
     transporter.sendMail(mailOptions);
 }
 
-export const getData = async () => {
+const FREE_API_CONFIG: any = config.get("FreeAPI");
 
+export const getSquadData = async () => {
     const options = {
         method: "GET",
-        url: "https://api.football-data.org/v4/competitions/PL/teams",
+        url: FREE_API_CONFIG.squadURL,
         headers: {
-            "X-Auth-Token": "fb17a2d75bd7416aa7de8809670af021",
+            "X-Auth-Token": FREE_API_CONFIG.X_Auth_Token,
             "Accept": "application/json",
             "Content-Type": "application/json",
 
         },
     };
     const data: any = await axios.request(options);
-    const manUnitedData = data.data.teams.filter(a => a.name == 'Manchester United FC')
+    const manUnitedData = data.data.teams.filter(data => data.name == 'Manchester United FC');
     console.log(manUnitedData);
+    return manUnitedData ? manUnitedData[0] : null;
+}
+
+// export const getPLmatchdays = async (teamId: number) => {
+//     const options = {
+//         method: "GET",
+//         url: `${FREE_API_CONFIG.matchdayURL}/${teamId}/matches?competitions=PL&season=2024`,
+//         headers: {
+//             "X-Auth-Token": FREE_API_CONFIG.X_Auth_Token,
+//             "Accept": "application/json",
+//             "Content-Type": "application/json",
+
+//         }
+//     }
+
+//     const data = await axios.request(options);
+//     console.log(data);
+//     return data;
+// }
+
+export const getmatchdays = async () => {
+    try {
+        const data = await Scrap.startScrap();
+        return data
+    } catch (error) {
+        console.log(error);
+    }
 }

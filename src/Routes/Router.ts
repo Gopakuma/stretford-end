@@ -3,6 +3,7 @@ import { TconfigApi } from "../../Types/CommonTypes.js";
 import { Router } from 'express';
 import UserController from '../controllers/UserController.js';
 import { authenticateJWT } from "../../middlewares/AuthJWT.js";
+import DataController from '../controllers/RefreshController.js';
 
 const api: TconfigApi = config.get('api');
 const { baseURL } = api;
@@ -10,10 +11,12 @@ const { baseURL } = api;
 class Routes {
     public router: Router;
     public userController: UserController;
+    public dataController: DataController;
 
     constructor(router: Router) {
         this.router = router,
             this.userController = new UserController();
+        this.dataController = new DataController();
         this.init();
     }
 
@@ -26,7 +29,10 @@ class Routes {
         //DashBoard
         this.router.delete(`${baseURL}/dashboard`, authenticateJWT, (req, res) => this.userController.deleteUser(req, res))
         this.router.post(`${baseURL}/notification`, authenticateJWT, (req, res) => this.userController.notification(req, res))
-        this.router.get(`${baseURL}/data`, (req, res) => this.userController.data(req, res))
+
+        //Data Sync
+        this.router.get(`${baseURL}/refresh`, (req, res) => this.dataController.refreshata(req, res))
+
     }
 }
 

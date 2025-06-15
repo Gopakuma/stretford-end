@@ -1,0 +1,2 @@
+https://api.football-data.org/v4/teams/64/matches?competitions=PL&season=2024
+https://api.football-data.org/v4/competitions/PL/teams

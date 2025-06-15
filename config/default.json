@@ -23,5 +23,11 @@
     },
     "nodemailer" : {
         "token" : "15d96ec78ec9fd6badac06047be16645"
+    },
+    "FreeAPI" : {
+        "squadURL": "https://api.football-data.org/v4/competitions/PL/teams",
+        "matchdayURL": "https://onefootball.com/en/team/manchester-united-21/fixtures",
+        "standingsURL": "https://api.football-data.org/v4/competitions/PL/standings",
+        "X_Auth_Token": "fb17a2d75bd7416aa7de8809670af021"
     }
 }

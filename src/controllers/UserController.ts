@@ -2,18 +2,14 @@ import { Request, Response } from "express";
 import UserService from "../service/UserService.js";
 import { HttpStatusCode } from "axios";
 import User from "../../Database/models/User.js";
-import { getData } from "../../utils/utils.js";
 
 class UserController {
     public userService: UserService;
 
     constructor() {
-        this.userService = new UserService();;
-        this.init();
+        this.userService = new UserService();
     }
-    init() {
 
-    }
     async signup(req: Request, res: Response) {
         try {
             const userDto: User = req.body;
@@ -59,16 +55,6 @@ class UserController {
         }
     }
 
-    async data(req: Request, res: Response) {
-        try {
-            const userDto: User = req.body;
-            const data = await getData();
-            res.status(HttpStatusCode.Accepted).json({ data })
-        } catch (error) {
-            console.log(`$$ --${error} -- $$`);
-            res.status(HttpStatusCode.InternalServerError).json({ "error": error.message })
-        }
-    }
 }
 
 export default UserController;

@@ -1,3 +1,56 @@
-.menu{
-   display: grid;
-}
+/* Dashboard.css */
+
+/* Main menu container */
+.menu {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding: 20px;
+   min-height: 100vh;
+   background: #f4f4f4;
+ }
+ 
+ /* Notification button */
+ .btn-notification {
+   background: #007bff;
+   color: white;
+   font-size: 16px;
+   padding: 10px 20px;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background 0.3s ease-in-out;
+ }
+ 
+ .btn-notification:hover {
+   background: #0056b3;
+ }
+ 
+ /* Logout button styling (assuming default button styles) */
+ .logout-button {
+   background: #dc3545;
+   color: white;
+   font-size: 16px;
+   padding: 10px 20px;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   margin-top: 10px;
+   transition: background 0.3s ease-in-out;
+ }
+ 
+ .logout-button:hover {
+   background: #a71d2a;
+ }
+ 
+ /* News feed container inside Dashboard */
+ .news-feed {
+   width: 80%;
+   max-width: 800px;
+   margin-top: 20px;
+   background: white;
+   padding: 15px;
+   border-radius: 8px;
+   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+ }

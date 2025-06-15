@@ -1,0 +1,18 @@
+manUnitedData[0].
+squad
+founded
+venue 
+website 
+shortName 
+name 
+crest
+clubColors 
+area 
+
+{
+dateOfBirth : '2005-11-13'
+id : 181933
+name : 'Leny Yoro'
+nationality :'France'
+position : 'Centre-Back'
+}

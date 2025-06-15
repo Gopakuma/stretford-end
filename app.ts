@@ -5,6 +5,9 @@ import { Tserver } from './Types/CommonTypes.js'
 import { Router } from "express";
 import Routes from './src/Routes/Router.js';
 import cors from 'cors';
+import Squad from './Database/models/Squad.js';
+import User from './Database/models/User.js';
+import Matchday from './Database/models/Matchday.js';
 
 const server: Tserver = config.get('server');
 const { port } = server;
@@ -29,7 +32,11 @@ app.use(new Routes(router).router);
 (async function initialize() {
   try {
     await sequelize.authenticate();
-    await sequelize.sync(); // Creates tables if they don't exist
+
+    await User.sync();
+    await Squad.sync();
+    await Matchday.sync();
+
     console.log('Connected to MSSQL database');
   } catch (error) {
     console.error('Database connection failed:', error);
