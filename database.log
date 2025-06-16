@@ -1454,3 +1454,34 @@ info: Executing (default): INSERT INTO [Matchdays] ([matchDay],[matchTime],[home
 info: Executing (default): INSERT INTO [Matchdays] ([matchDay],[matchTime],[home],[away],[status],[createdAt],[updatedAt]) OUTPUT INSERTED.[id],INSERTED.[matchDay],INSERTED.[matchTime],INSERTED.[home],INSERTED.[away],INSERTED.[status],INSERTED.[createdAt],INSERTED.[updatedAt] VALUES (@0,@1,@2,@3,@4,@5,@6);
 info: Executing (default): INSERT INTO [Matchdays] ([matchDay],[matchTime],[home],[away],[status],[createdAt],[updatedAt]) OUTPUT INSERTED.[id],INSERTED.[matchDay],INSERTED.[matchTime],INSERTED.[home],INSERTED.[away],INSERTED.[status],INSERTED.[createdAt],INSERTED.[updatedAt] VALUES (@0,@1,@2,@3,@4,@5,@6);
 info: Executing (dd0a6738ee2bb7809c15): COMMIT TRANSACTION;
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): IF OBJECT_ID('[Squads]', 'U') IS NOT NULL DROP TABLE [Squads];
+info: Executing (default): IF OBJECT_ID('[Matchdays]', 'U') IS NOT NULL DROP TABLE [Matchdays];
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): IF OBJECT_ID('[Squads]', 'U') IS NULL CREATE TABLE [Squads] ([id] INTEGER IDENTITY(1,1) , [dateOfBirth] DATETIMEOFFSET NULL, [name] NVARCHAR(255) NULL UNIQUE, [nationality] NVARCHAR(255) NULL, [position] NVARCHAR(255) NULL, [createdAt] DATETIMEOFFSET NULL, [updatedAt] DATETIMEOFFSET NULL, PRIMARY KEY ([id]));
+info: Executing (default): IF OBJECT_ID('[Matchdays]', 'U') IS NULL CREATE TABLE [Matchdays] ([id] INTEGER IDENTITY(1,1) , [matchDay] DATETIMEOFFSET NULL, [matchTime] NVARCHAR(255) NULL, [home] NVARCHAR(255) NULL, [away] NVARCHAR(255) NULL, [status] VARCHAR(255) CHECK ([status] IN(N'NOT_STARTED', N'FINISHED', N'NO_RESULT')), [createdAt] DATETIMEOFFSET NULL, [updatedAt] DATETIMEOFFSET NULL, PRIMARY KEY ([id]));
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): CREATE INDEX [matchdays_match_day] ON [Matchdays] ([matchDay])
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (9c48021d4809c940b158): BEGIN TRANSACTION;
+info: Executing (9c48021d4809c940b158): SAVE TRANSACTION [9c48021d4809c940b158-sp-1];
+info: Executing (9c48021d4809c940b158): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'test@gmail.com';
+info: Executing (9c48021d4809c940b158): INSERT INTO [Users] ([username],[email],[password],[createdAt],[updatedAt]) OUTPUT INSERTED.[id],INSERTED.[username],INSERTED.[email],INSERTED.[password],INSERTED.[createdAt],INSERTED.[updatedAt] VALUES (@0,@1,@2,@3,@4);
+info: Executing (9c48021d4809c940b158): COMMIT TRANSACTION;
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'test@gmail.com';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'test@gmail.com';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'test@gmail.com';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'test@gmail.com';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'test@gmail.com';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'test@gmail.com';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'test@gmail.com';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'test@gmail.com';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'test@gmail.com';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'test@gmail.com';

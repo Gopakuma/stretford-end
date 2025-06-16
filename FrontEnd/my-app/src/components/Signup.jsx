@@ -1,16 +1,23 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "./AuthProvider";
 
 
 function Signup() {
+  const navigate = useNavigate();
+  const { login, isAuthenticated } = useAuth(); 
+
+  useEffect(() => {
+    if(isAuthenticated) {
+      navigate('/dashboard')
+    }
+  }, [navigate, isAuthenticated])
+
   const [formdata, setFormdata] = useState({
     email: '',
     username: ''
   })
-  const { login } = useAuth(); 
-  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormdata({ ...formdata, [e.target.name]: e.target.value });
@@ -18,7 +25,6 @@ function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormdata({ ...formdata, [e.target.name]: e.target.value });
     callSignupAPI();
   }
 
@@ -35,7 +41,6 @@ function Signup() {
       console.log(error);
     }
   }
-  console.log(formdata);
 
   function handleOnclick(e) {
     e.preventDefault();

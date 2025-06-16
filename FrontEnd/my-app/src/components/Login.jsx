@@ -5,13 +5,21 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "./AuthProvider";
 
 function Login() {
+  const { login, isAuthenticated } = useAuth(); 
+  const navigate = useNavigate();
+  
+  useEffect(() => {
+    if(isAuthenticated) {
+      navigate('/dashboard')
+    }
+  }, [navigate, isAuthenticated])
+  
   const [formdata, setFormdata] = useState({
     email: '',
     password: ''
   })
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const navigate = useNavigate();
-  const { login } = useAuth(); 
+
 
   const handleChange = (e) => {
     setFormdata({ ...formdata, [e.target.name]: e.target.value });
