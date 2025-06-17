@@ -4,6 +4,8 @@ import { Router } from 'express';
 import UserController from '../controllers/UserController.js';
 import { authenticateJWT } from "../../middlewares/AuthJWT.js";
 import DataController from '../controllers/RefreshController.js';
+import SquadController from '../controllers/SquadController.js';
+import MatchdayController from '../controllers/MatchdayController.js';
 
 const api: TconfigApi = config.get('api');
 const { baseURL } = api;
@@ -12,11 +14,15 @@ class Routes {
     public router: Router;
     public userController: UserController;
     public dataController: DataController;
+    public squadController: SquadController;
+    public matchdayController: MatchdayController;
 
     constructor(router: Router) {
         this.router = router,
             this.userController = new UserController();
         this.dataController = new DataController();
+        this.squadController = new SquadController();
+        this.matchdayController = new MatchdayController();
         this.init();
     }
 
@@ -32,6 +38,12 @@ class Routes {
 
         //Data Sync
         this.router.get(`${baseURL}/refresh`, (req, res) => this.dataController.refreshata(req, res))
+
+        //Squad
+        this.router.get(`${baseURL}/squad`, authenticateJWT, (req, res) => this.squadController.getSquadData(req, res))
+
+        //matchday
+        this.router.get(`${baseURL}/matchday`, authenticateJWT, (req, res) => this.matchdayController.getMatchdays(req, res))
 
     }
 }

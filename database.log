@@ -1485,3 +1485,668 @@ info: Executing (default): SELECT [id], [username], [email], [password], [create
 info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'test@gmail.com';
 info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'test@gmail.com';
 info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'test@gmail.com';
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): IF OBJECT_ID('[Squads]', 'U') IS NOT NULL DROP TABLE [Squads];
+info: Executing (default): IF OBJECT_ID('[Matchdays]', 'U') IS NOT NULL DROP TABLE [Matchdays];
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): IF OBJECT_ID('[Squads]', 'U') IS NULL CREATE TABLE [Squads] ([id] INTEGER IDENTITY(1,1) , [dateOfBirth] DATETIMEOFFSET NULL, [name] NVARCHAR(255) NULL UNIQUE, [nationality] NVARCHAR(255) NULL, [position] NVARCHAR(255) NULL, [createdAt] DATETIMEOFFSET NULL, [updatedAt] DATETIMEOFFSET NULL, PRIMARY KEY ([id]));
+info: Executing (default): IF OBJECT_ID('[Matchdays]', 'U') IS NULL CREATE TABLE [Matchdays] ([id] INTEGER IDENTITY(1,1) , [matchDay] DATETIMEOFFSET NULL, [matchTime] NVARCHAR(255) NULL, [home] NVARCHAR(255) NULL, [away] NVARCHAR(255) NULL, [status] VARCHAR(255) CHECK ([status] IN(N'NOT_STARTED', N'FINISHED', N'NO_RESULT')), [createdAt] DATETIMEOFFSET NULL, [updatedAt] DATETIMEOFFSET NULL, PRIMARY KEY ([id]));
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): CREATE INDEX [matchdays_match_day] ON [Matchdays] ([matchDay])
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): IF OBJECT_ID('[Squads]', 'U') IS NOT NULL DROP TABLE [Squads];
+info: Executing (default): IF OBJECT_ID('[Matchdays]', 'U') IS NOT NULL DROP TABLE [Matchdays];
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): IF OBJECT_ID('[Matchdays]', 'U') IS NULL CREATE TABLE [Matchdays] ([id] INTEGER IDENTITY(1,1) , [matchDay] DATETIMEOFFSET NULL, [matchTime] NVARCHAR(255) NULL, [home] NVARCHAR(255) NULL, [away] NVARCHAR(255) NULL, [status] VARCHAR(255) CHECK ([status] IN(N'NOT_STARTED', N'FINISHED', N'NO_RESULT')), [createdAt] DATETIMEOFFSET NULL, [updatedAt] DATETIMEOFFSET NULL, PRIMARY KEY ([id]));
+info: Executing (default): IF OBJECT_ID('[Squads]', 'U') IS NULL CREATE TABLE [Squads] ([id] INTEGER IDENTITY(1,1) , [dateOfBirth] DATETIMEOFFSET NULL, [name] NVARCHAR(255) NULL UNIQUE, [nationality] NVARCHAR(255) NULL, [position] NVARCHAR(255) NULL, [createdAt] DATETIMEOFFSET NULL, [updatedAt] DATETIMEOFFSET NULL, PRIMARY KEY ([id]));
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): CREATE INDEX [matchdays_match_day] ON [Matchdays] ([matchDay])
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (a39c0782588a62c582de): BEGIN TRANSACTION;
+info: Executing (default): INSERT INTO [Matchdays] ([matchDay],[matchTime],[home],[away],[status],[createdAt],[updatedAt]) OUTPUT INSERTED.[id],INSERTED.[matchDay],INSERTED.[matchTime],INSERTED.[home],INSERTED.[away],INSERTED.[status],INSERTED.[createdAt],INSERTED.[updatedAt] VALUES (@0,@1,@2,@3,@4,@5,@6);
+info: Executing (default): INSERT INTO [Matchdays] ([matchDay],[matchTime],[home],[away],[status],[createdAt],[updatedAt]) OUTPUT INSERTED.[id],INSERTED.[matchDay],INSERTED.[matchTime],INSERTED.[home],INSERTED.[away],INSERTED.[status],INSERTED.[createdAt],INSERTED.[updatedAt] VALUES (@0,@1,@2,@3,@4,@5,@6);
+info: Executing (default): INSERT INTO [Matchdays] ([matchDay],[matchTime],[home],[away],[status],[createdAt],[updatedAt]) OUTPUT INSERTED.[id],INSERTED.[matchDay],INSERTED.[matchTime],INSERTED.[home],INSERTED.[away],INSERTED.[status],INSERTED.[createdAt],INSERTED.[updatedAt] VALUES (@0,@1,@2,@3,@4,@5,@6);
+info: Executing (default): INSERT INTO [Matchdays] ([matchDay],[matchTime],[home],[away],[status],[createdAt],[updatedAt]) OUTPUT INSERTED.[id],INSERTED.[matchDay],INSERTED.[matchTime],INSERTED.[home],INSERTED.[away],INSERTED.[status],INSERTED.[createdAt],INSERTED.[updatedAt] VALUES (@0,@1,@2,@3,@4,@5,@6);
+info: Executing (default): INSERT INTO [Matchdays] ([matchDay],[matchTime],[home],[away],[status],[createdAt],[updatedAt]) OUTPUT INSERTED.[id],INSERTED.[matchDay],INSERTED.[matchTime],INSERTED.[home],INSERTED.[away],INSERTED.[status],INSERTED.[createdAt],INSERTED.[updatedAt] VALUES (@0,@1,@2,@3,@4,@5,@6);
+info: Executing (a39c0782588a62c582de): COMMIT TRANSACTION;
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (8b8a68b39d1cc9ca4a8a): BEGIN TRANSACTION;
+info: Executing (8b8a68b39d1cc9ca4a8a): SET IDENTITY_INSERT [Squads] ON; INSERT INTO [Squads] ([id],[dateOfBirth],[name],[nationality],[position],[createdAt],[updatedAt]) OUTPUT INSERTED.[id],INSERTED.[dateOfBirth],INSERTED.[name],INSERTED.[nationality],INSERTED.[position],INSERTED.[createdAt],INSERTED.[updatedAt] VALUES (7544,'1996-04-02 00:00:00.000 +00:00',N'André Onana',N'Cameroon',N'Goalkeeper','2025-06-16 19:32:43.217 +00:00','2025-06-16 19:32:43.217 +00:00'),(8035,'1986-04-15 00:00:00.000 +00:00',N'Tom Heaton',N'England',N'Goalkeeper','2025-06-16 19:32:43.218 +00:00','2025-06-16 19:32:43.218 +00:00'),(29518,'1998-04-14 00:00:00.000 +00:00',N'Altay Bayındır',N'Turkey',N'Goalkeeper','2025-06-16 19:32:43.218 +00:00','2025-06-16 19:32:43.218 +00:00'),(210730,'2002-11-20 00:00:00.000 +00:00',N'Dermot Mee',N'Northern Ireland',N'Goalkeeper','2025-06-16 19:32:43.218 +00:00','2025-06-16 19:32:43.218 +00:00'),(274983,'2006-02-19 00:00:00.000 +00:00',N'Elyh Harrison',N'England',N'Goalkeeper','2025-06-16 19:32:43.218 +00:00','2025-06-16 19:32:43.218 +00:00'),(276462,'2007-05-26 00:00:00.000 +00:00',N'Will Murdock',N'Northern Ireland',N'Goalkeeper','2025-06-16 19:32:43.218 +00:00','2025-06-16 19:32:43.218 +00:00'),(188291,'2005-02-23 00:00:00.000 +00:00',N'Tyler Fredricson',N'England',N'Defence','2025-06-16 19:32:43.219 +00:00','2025-06-16 19:32:43.219 +00:00'),(273281,'2008-02-06 00:00:00.000 +00:00',N'Godwill Kukonki',N'England',N'Defence','2025-06-16 19:32:43.219 +00:00','2025-06-16 19:32:43.219 +00:00'),(277734,'2006-12-08 00:00:00.000 +00:00',N'Jaydan Kamason',N'England',N'Defence','2025-06-16 19:32:43.219 +00:00','2025-06-16 19:32:43.219 +00:00'),(278168,'2008-01-25 00:00:00.000 +00:00',N'Bendito Mantato',N'England',N'Defence','2025-06-16 19:32:43.219 +00:00','2025-06-16 19:32:43.219 +00:00'),(270161,'2006-09-28 00:00:00.000 +00:00',N'James Scanlon',N'Gibraltar',N'Midfield','2025-06-16 19:32:43.219 +00:00','2025-06-16 19:32:43.219 +00:00'),(271941,'2007-03-19 00:00:00.000 +00:00',N'Jack Fletcher',N'England',N'Midfield','2025-06-16 19:32:43.219 +00:00','2025-06-16 19:32:43.219 +00:00'),(272305,'2007-05-09 00:00:00.000 +00:00',N'Jayce Fitzgerald',N'England',N'Midfield','2025-06-16 19:32:43.219 +00:00','2025-06-16 19:32:43.219 +00:00'),(275523,'2005-11-29 00:00:00.000 +00:00',N'Jack Moorhouse',N'England',N'Midfield','2025-06-16 19:32:43.219 +00:00','2025-06-16 19:32:43.219 +00:00'),(275579,'2006-02-03 00:00:00.000 +00:00',N'Sékou Koné',N'Mali',N'Midfield','2025-06-16 19:32:43.219 +00:00','2025-06-16 19:32:43.219 +00:00'),(275522,'2007-11-29 00:00:00.000 +00:00',N'Chido Obi-Martin',N'Denmark',N'Offence','2025-06-16 19:32:43.219 +00:00','2025-06-16 19:32:43.219 +00:00'),(181901,'2004-07-01 00:00:00.000 +00:00',N'Alejandro Garnacho',N'Argentina',N'Left Winger','2025-06-16 19:32:43.219 +00:00','2025-06-16 19:32:43.219 +00:00'),(152770,'2003-02-04 00:00:00.000 +00:00',N'Rasmus Højlund',N'Denmark',N'Centre-Forward','2025-06-16 19:32:43.219 +00:00','2025-06-16 19:32:43.219 +00:00'),(133584,'2002-07-11 00:00:00.000 +00:00',N'Amad Diallo',N'Ivory Coast',N'Right Winger','2025-06-16 19:32:43.219 +00:00','2025-06-16 19:32:43.219 +00:00'),(99731,'2001-05-22 00:00:00.000 +00:00',N'Joshua Zirkzee',N'Netherlands',N'Centre-Forward','2025-06-16 19:32:43.219 +00:00','2025-06-16 19:32:43.219 +00:00'),(46451,'1998-01-18 00:00:00.000 +00:00',N'Lisandro Martínez',N'Argentina',N'Centre-Back','2025-06-16 19:32:43.219 +00:00','2025-06-16 19:32:43.219 +00:00'),(28549,'2001-04-11 00:00:00.000 +00:00',N'Manuel Ugarte',N'Uruguay',N'Defensive Midfield','2025-06-16 19:32:43.219 +00:00','2025-06-16 19:32:43.219 +00:00'),(15905,'1999-03-18 00:00:00.000 +00:00',N'Diogo Dalot',N'Portugal',N'Right-Back','2025-06-16 19:32:43.219 +00:00','2025-06-16 19:32:43.219 +00:00'),(8014,'1988-01-03 00:00:00.000 +00:00',N'Jonny Evans',N'Northern Ireland',N'Centre-Back','2025-06-16 19:32:43.219 +00:00','2025-06-16 19:32:43.219 +00:00'),(7898,'1995-07-12 00:00:00.000 +00:00',N'Luke Shaw',N'England',N'Left-Back','2025-06-16 19:32:43.219 +00:00','2025-06-16 19:32:43.219 +00:00'),(7599,'1999-01-10 00:00:00.000 +00:00',N'Mason Mount',N'England',N'Attacking Midfield','2025-06-16 19:32:43.220 +00:00','2025-06-16 19:32:43.220 +00:00'),(7553,'1997-11-14 00:00:00.000 +00:00',N'Noussair Mazraoui',N'Morocco',N'Right-Back','2025-06-16 19:32:43.220 +00:00','2025-06-16 19:32:43.220 +00:00'),(7549,'1999-08-12 00:00:00.000 +00:00',N'Matthijs de Ligt',N'Netherlands',N'Centre-Back','2025-06-16 19:32:43.220 +00:00','2025-06-16 19:32:43.220 +00:00'),(3492,'1994-07-17 00:00:00.000 +00:00',N'Victor Nilsson-Lindelöf',N'Sweden',N'Centre-Back','2025-06-16 19:32:43.220 +00:00','2025-06-16 19:32:43.220 +00:00'),(3459,'1992-02-14 00:00:00.000 +00:00',N'Christian Eriksen',N'Denmark',N'Central Midfield','2025-06-16 19:32:43.220 +00:00','2025-06-16 19:32:43.220 +00:00'),(3326,'1993-03-05 00:00:00.000 +00:00',N'Harry Maguire',N'England',N'Centre-Back','2025-06-16 19:32:43.220 +00:00','2025-06-16 19:32:43.220 +00:00'),(3257,'1994-09-08 00:00:00.000 +00:00',N'Bruno Fernandes',N'Portugal',N'Attacking Midfield','2025-06-16 19:32:43.220 +00:00','2025-06-16 19:32:43.220 +00:00');; SET IDENTITY_INSERT [Squads] OFF;;SET IDENTITY_INSERT [Squads] ON; INSERT INTO [Squads] ([id],[dateOfBirth],[name],[nationality],[position],[createdAt],[updatedAt]) OUTPUT INSERTED.[id],INSERTED.[dateOfBirth],INSERTED.[name],INSERTED.[nationality],INSERTED.[position],INSERTED.[createdAt],INSERTED.[updatedAt] VALUES (3231,'1992-02-23 00:00:00.000 +00:00',N'Casemiro',N'Brazil',N'Defensive Midfield','2025-06-16 19:32:43.220 +00:00','2025-06-16 19:32:43.220 +00:00'),(248978,'2005-11-12 00:00:00.000 +00:00',N'Habeeb Ogunneye',N'England',N'Right-Back','2025-06-16 19:32:43.220 +00:00','2025-06-16 19:32:43.220 +00:00'),(248734,'2004-01-03 00:00:00.000 +00:00',N'Toby Collyer',N'England',N'Defensive Midfield','2025-06-16 19:32:43.220 +00:00','2025-06-16 19:32:43.220 +00:00'),(247644,'2006-09-22 00:00:00.000 +00:00',N'Ayden Heaven',N'England',N'Centre-Back','2025-06-16 19:32:43.220 +00:00','2025-06-16 19:32:43.220 +00:00'),(211559,'2004-10-26 00:00:00.000 +00:00',N'Patrick Dorgu',N'Denmark',N'Left-Back','2025-06-16 19:32:43.220 +00:00','2025-06-16 19:32:43.220 +00:00'),(210150,'2007-03-16 00:00:00.000 +00:00',N'Harry Amass',N'England',N'Left-Back','2025-06-16 19:32:43.220 +00:00','2025-06-16 19:32:43.220 +00:00'),(190797,'2005-04-19 00:00:00.000 +00:00',N'Kobbie Mainoo',N'England',N'Central Midfield','2025-06-16 19:32:43.220 +00:00','2025-06-16 19:32:43.220 +00:00'),(181933,'2005-11-13 00:00:00.000 +00:00',N'Leny Yoro',N'France',N'Centre-Back','2025-06-16 19:32:43.220 +00:00','2025-06-16 19:32:43.220 +00:00');; SET IDENTITY_INSERT [Squads] OFF;
+info: Executing (8b8a68b39d1cc9ca4a8a): COMMIT TRANSACTION;
+info: Executing (3dc31e2d266a8d731d6e): BEGIN TRANSACTION;
+info: Executing (default): INSERT INTO [Matchdays] ([matchDay],[matchTime],[home],[away],[status],[createdAt],[updatedAt]) OUTPUT INSERTED.[id],INSERTED.[matchDay],INSERTED.[matchTime],INSERTED.[home],INSERTED.[away],INSERTED.[status],INSERTED.[createdAt],INSERTED.[updatedAt] VALUES (@0,@1,@2,@3,@4,@5,@6);
+info: Executing (default): INSERT INTO [Matchdays] ([matchDay],[matchTime],[home],[away],[status],[createdAt],[updatedAt]) OUTPUT INSERTED.[id],INSERTED.[matchDay],INSERTED.[matchTime],INSERTED.[home],INSERTED.[away],INSERTED.[status],INSERTED.[createdAt],INSERTED.[updatedAt] VALUES (@0,@1,@2,@3,@4,@5,@6);
+info: Executing (default): INSERT INTO [Matchdays] ([matchDay],[matchTime],[home],[away],[status],[createdAt],[updatedAt]) OUTPUT INSERTED.[id],INSERTED.[matchDay],INSERTED.[matchTime],INSERTED.[home],INSERTED.[away],INSERTED.[status],INSERTED.[createdAt],INSERTED.[updatedAt] VALUES (@0,@1,@2,@3,@4,@5,@6);
+info: Executing (default): INSERT INTO [Matchdays] ([matchDay],[matchTime],[home],[away],[status],[createdAt],[updatedAt]) OUTPUT INSERTED.[id],INSERTED.[matchDay],INSERTED.[matchTime],INSERTED.[home],INSERTED.[away],INSERTED.[status],INSERTED.[createdAt],INSERTED.[updatedAt] VALUES (@0,@1,@2,@3,@4,@5,@6);
+info: Executing (default): INSERT INTO [Matchdays] ([matchDay],[matchTime],[home],[away],[status],[createdAt],[updatedAt]) OUTPUT INSERTED.[id],INSERTED.[matchDay],INSERTED.[matchTime],INSERTED.[home],INSERTED.[away],INSERTED.[status],INSERTED.[createdAt],INSERTED.[updatedAt] VALUES (@0,@1,@2,@3,@4,@5,@6);
+info: Executing (3dc31e2d266a8d731d6e): COMMIT TRANSACTION;
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (2c3532f0a172b38f46a0): BEGIN TRANSACTION;
+info: Executing (2c3532f0a172b38f46a0): SAVE TRANSACTION [2c3532f0a172b38f46a0-sp-1];
+info: Executing (2c3532f0a172b38f46a0): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'gopugopuz2000@gmail.com';
+info: Executing (2c3532f0a172b38f46a0): INSERT INTO [Users] ([username],[email],[password],[createdAt],[updatedAt]) OUTPUT INSERTED.[id],INSERTED.[username],INSERTED.[email],INSERTED.[password],INSERTED.[createdAt],INSERTED.[updatedAt] VALUES (@0,@1,@2,@3,@4);
+info: Executing (2c3532f0a172b38f46a0): COMMIT TRANSACTION;
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'gopugopuz2000@gmail.com';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'gopugopuz2000@gmail.com';
+info: Executing (01b534977c8089313a7e): BEGIN TRANSACTION;
+info: Executing (01b534977c8089313a7e): SAVE TRANSACTION [01b534977c8089313a7e-sp-1];
+info: Executing (01b534977c8089313a7e): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'gopugopuz2000@gmail.com';
+info: Executing (01b534977c8089313a7e): COMMIT TRANSACTION;
+info: Executing (ee427bcf25e9a8ddb7cf): BEGIN TRANSACTION;
+info: Executing (ee427bcf25e9a8ddb7cf): SAVE TRANSACTION [ee427bcf25e9a8ddb7cf-sp-1];
+info: Executing (ee427bcf25e9a8ddb7cf): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'gopugopuz2000@gmail.com';
+info: Executing (ee427bcf25e9a8ddb7cf): COMMIT TRANSACTION;
+info: Executing (e93e60f4a281185382ce): BEGIN TRANSACTION;
+info: Executing (e93e60f4a281185382ce): SAVE TRANSACTION [e93e60f4a281185382ce-sp-1];
+info: Executing (e93e60f4a281185382ce): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'gopugopuz2000@gmail.com';
+info: Executing (e93e60f4a281185382ce): COMMIT TRANSACTION;
+info: Executing (d20d992ae1857bedcc67): BEGIN TRANSACTION;
+info: Executing (d20d992ae1857bedcc67): SAVE TRANSACTION [d20d992ae1857bedcc67-sp-1];
+info: Executing (d20d992ae1857bedcc67): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'gopugopuz2000@gmail.com';
+info: Executing (d20d992ae1857bedcc67): COMMIT TRANSACTION;
+info: Executing (986666ea34e4465fb84d): BEGIN TRANSACTION;
+info: Executing (986666ea34e4465fb84d): SAVE TRANSACTION [986666ea34e4465fb84d-sp-1];
+info: Executing (986666ea34e4465fb84d): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'gopugopuz2000@gmail.com';
+info: Executing (986666ea34e4465fb84d): COMMIT TRANSACTION;
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'gopugopuz2000@gmail.com';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'gopugopuz2000@gmail.com';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'gopugopuz2000@gmail.com';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'gopugopuz2000@gmail.com';
+info: Executing (8efc58a006e5fe81c5bf): BEGIN TRANSACTION;
+info: Executing (8efc58a006e5fe81c5bf): SAVE TRANSACTION [8efc58a006e5fe81c5bf-sp-1];
+info: Executing (8efc58a006e5fe81c5bf): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'gopugopuz2000@gmail.com';
+info: Executing (8efc58a006e5fe81c5bf): COMMIT TRANSACTION;
+info: Executing (fad94e89c2635db93172): BEGIN TRANSACTION;
+info: Executing (fad94e89c2635db93172): SAVE TRANSACTION [fad94e89c2635db93172-sp-1];
+info: Executing (fad94e89c2635db93172): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'gopugopuz2000@gmail.com';
+info: Executing (fad94e89c2635db93172): COMMIT TRANSACTION;
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'gopugopuz2000@gmail.com';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'gopugopuz2000@gmail.com';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'gopugopuz2000@gmail.com';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'gopugopuz2000@gmail.com';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'gopugopuz2000@gmail.com';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'gopugopuz2000@gmail.com';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'gopugopuz2000@gmail.com';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'gopugopuz2000@gmail.com';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'gopugopuz2000@gmail.com';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'gopugopuz2000@gmail.com';
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (9e520ce02107d40553ad): BEGIN TRANSACTION;
+info: Executing (9e520ce02107d40553ad): SAVE TRANSACTION [9e520ce02107d40553ad-sp-1];
+info: Executing (9e520ce02107d40553ad): ROLLBACK TRANSACTION;
+info: Executing (3a93f3dbee8a15818da5): BEGIN TRANSACTION;
+info: Executing (3a93f3dbee8a15818da5): SAVE TRANSACTION [3a93f3dbee8a15818da5-sp-1];
+info: Executing (3a93f3dbee8a15818da5): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday] WHERE [Matchday].[matchTime] = N'18:30' AND [Matchday].[matchDay] = N'2025-07-19 00:00:00.000 +00:00' ORDER BY [Matchday].[id] OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
+info: Executing (3a93f3dbee8a15818da5): SAVE TRANSACTION [3a93f3dbee8a15818da5-sp-2];
+info: Executing (3a93f3dbee8a15818da5): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday] WHERE [Matchday].[matchTime] = N'04:30' AND [Matchday].[matchDay] = N'2025-07-27 00:00:00.000 +00:00' ORDER BY [Matchday].[id] OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
+info: Executing (3a93f3dbee8a15818da5): SAVE TRANSACTION [3a93f3dbee8a15818da5-sp-3];
+info: Executing (3a93f3dbee8a15818da5): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday] WHERE [Matchday].[matchTime] = N'07:00' AND [Matchday].[matchDay] = N'2025-07-31 00:00:00.000 +00:00' ORDER BY [Matchday].[id] OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
+info: Executing (3a93f3dbee8a15818da5): SAVE TRANSACTION [3a93f3dbee8a15818da5-sp-4];
+info: Executing (3a93f3dbee8a15818da5): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday] WHERE [Matchday].[matchTime] = N'02:30' AND [Matchday].[matchDay] = N'2025-08-04 00:00:00.000 +00:00' ORDER BY [Matchday].[id] OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
+info: Executing (3a93f3dbee8a15818da5): SAVE TRANSACTION [3a93f3dbee8a15818da5-sp-5];
+info: Executing (3a93f3dbee8a15818da5): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday] WHERE [Matchday].[matchTime] = N'17:15' AND [Matchday].[matchDay] = N'2025-08-09 00:00:00.000 +00:00' ORDER BY [Matchday].[id] OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
+info: Executing (3a93f3dbee8a15818da5): COMMIT TRANSACTION;
+info: Executing (268e54dae3f76e27ef57): BEGIN TRANSACTION;
+info: Executing (268e54dae3f76e27ef57): SAVE TRANSACTION [268e54dae3f76e27ef57-sp-1];
+info: Executing (268e54dae3f76e27ef57): ROLLBACK TRANSACTION;
+info: Executing (50217559200f88cc07f2): BEGIN TRANSACTION;
+info: Executing (50217559200f88cc07f2): SAVE TRANSACTION [50217559200f88cc07f2-sp-1];
+info: Executing (50217559200f88cc07f2): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday] WHERE [Matchday].[matchTime] = N'18:30' AND [Matchday].[matchDay] = N'2025-07-19 00:00:00.000 +00:00' ORDER BY [Matchday].[id] OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
+info: Executing (50217559200f88cc07f2): SAVE TRANSACTION [50217559200f88cc07f2-sp-2];
+info: Executing (50217559200f88cc07f2): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday] WHERE [Matchday].[matchTime] = N'04:30' AND [Matchday].[matchDay] = N'2025-07-27 00:00:00.000 +00:00' ORDER BY [Matchday].[id] OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
+info: Executing (50217559200f88cc07f2): SAVE TRANSACTION [50217559200f88cc07f2-sp-3];
+info: Executing (50217559200f88cc07f2): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday] WHERE [Matchday].[matchTime] = N'07:00' AND [Matchday].[matchDay] = N'2025-07-31 00:00:00.000 +00:00' ORDER BY [Matchday].[id] OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
+info: Executing (50217559200f88cc07f2): SAVE TRANSACTION [50217559200f88cc07f2-sp-4];
+info: Executing (50217559200f88cc07f2): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday] WHERE [Matchday].[matchTime] = N'02:30' AND [Matchday].[matchDay] = N'2025-08-04 00:00:00.000 +00:00' ORDER BY [Matchday].[id] OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
+info: Executing (50217559200f88cc07f2): SAVE TRANSACTION [50217559200f88cc07f2-sp-5];
+info: Executing (50217559200f88cc07f2): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday] WHERE [Matchday].[matchTime] = N'17:15' AND [Matchday].[matchDay] = N'2025-08-09 00:00:00.000 +00:00' ORDER BY [Matchday].[id] OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
+info: Executing (50217559200f88cc07f2): COMMIT TRANSACTION;
+info: Executing (83a4972490a62fdcc711): BEGIN TRANSACTION;
+info: Executing (83a4972490a62fdcc711): SAVE TRANSACTION [83a4972490a62fdcc711-sp-1];
+info: Executing (83a4972490a62fdcc711): ROLLBACK TRANSACTION;
+info: Executing (6c253f3e5d9ba0e0e353): BEGIN TRANSACTION;
+info: Executing (6c253f3e5d9ba0e0e353): SAVE TRANSACTION [6c253f3e5d9ba0e0e353-sp-1];
+info: Executing (6c253f3e5d9ba0e0e353): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday] WHERE [Matchday].[matchTime] = N'18:30' AND [Matchday].[matchDay] = N'2025-07-19 00:00:00.000 +00:00' ORDER BY [Matchday].[id] OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
+info: Executing (6c253f3e5d9ba0e0e353): SAVE TRANSACTION [6c253f3e5d9ba0e0e353-sp-2];
+info: Executing (6c253f3e5d9ba0e0e353): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday] WHERE [Matchday].[matchTime] = N'04:30' AND [Matchday].[matchDay] = N'2025-07-27 00:00:00.000 +00:00' ORDER BY [Matchday].[id] OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
+info: Executing (6c253f3e5d9ba0e0e353): SAVE TRANSACTION [6c253f3e5d9ba0e0e353-sp-3];
+info: Executing (6c253f3e5d9ba0e0e353): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday] WHERE [Matchday].[matchTime] = N'07:00' AND [Matchday].[matchDay] = N'2025-07-31 00:00:00.000 +00:00' ORDER BY [Matchday].[id] OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
+info: Executing (6c253f3e5d9ba0e0e353): SAVE TRANSACTION [6c253f3e5d9ba0e0e353-sp-4];
+info: Executing (6c253f3e5d9ba0e0e353): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday] WHERE [Matchday].[matchTime] = N'02:30' AND [Matchday].[matchDay] = N'2025-08-04 00:00:00.000 +00:00' ORDER BY [Matchday].[id] OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
+info: Executing (6c253f3e5d9ba0e0e353): SAVE TRANSACTION [6c253f3e5d9ba0e0e353-sp-5];
+info: Executing (6c253f3e5d9ba0e0e353): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday] WHERE [Matchday].[matchTime] = N'17:15' AND [Matchday].[matchDay] = N'2025-08-09 00:00:00.000 +00:00' ORDER BY [Matchday].[id] OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
+info: Executing (6c253f3e5d9ba0e0e353): COMMIT TRANSACTION;
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (082098a093169c011619): BEGIN TRANSACTION;
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-1];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'André Onana';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-2];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Tom Heaton';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-3];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Altay Bayındır';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-4];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Dermot Mee';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-5];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Elyh Harrison';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-6];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Will Murdock';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-7];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Tyler Fredricson';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-8];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Godwill Kukonki';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-9];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Jaydan Kamason';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-10];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Bendito Mantato';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-11];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'James Scanlon';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-12];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Jack Fletcher';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-13];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Jayce Fitzgerald';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-14];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Jack Moorhouse';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-15];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Sékou Koné';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-16];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Chido Obi-Martin';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-17];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Alejandro Garnacho';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-18];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Rasmus Højlund';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-19];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Amad Diallo';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-20];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Joshua Zirkzee';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-21];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Lisandro Martínez';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-22];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Manuel Ugarte';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-23];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Diogo Dalot';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-24];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Jonny Evans';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-25];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Luke Shaw';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-26];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Mason Mount';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-27];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Noussair Mazraoui';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-28];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Matthijs de Ligt';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-29];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Victor Nilsson-Lindelöf';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-30];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Christian Eriksen';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-31];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Harry Maguire';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-32];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Bruno Fernandes';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-33];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Casemiro';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-34];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Habeeb Ogunneye';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-35];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Toby Collyer';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-36];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Ayden Heaven';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-37];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Patrick Dorgu';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-38];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Harry Amass';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-39];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Kobbie Mainoo';
+info: Executing (082098a093169c011619): SAVE TRANSACTION [082098a093169c011619-sp-40];
+info: Executing (082098a093169c011619): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad] WHERE [Squad].[name] = N'Leny Yoro';
+info: Executing (082098a093169c011619): COMMIT TRANSACTION;
+info: Executing (544282ff096576086fd0): BEGIN TRANSACTION;
+info: Executing (544282ff096576086fd0): SAVE TRANSACTION [544282ff096576086fd0-sp-1];
+info: Executing (544282ff096576086fd0): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday] WHERE [Matchday].[matchTime] = N'18:30' AND [Matchday].[matchDay] = N'2025-07-19 00:00:00.000 +00:00' ORDER BY [Matchday].[id] OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
+info: Executing (544282ff096576086fd0): SAVE TRANSACTION [544282ff096576086fd0-sp-2];
+info: Executing (544282ff096576086fd0): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday] WHERE [Matchday].[matchTime] = N'04:30' AND [Matchday].[matchDay] = N'2025-07-27 00:00:00.000 +00:00' ORDER BY [Matchday].[id] OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
+info: Executing (544282ff096576086fd0): SAVE TRANSACTION [544282ff096576086fd0-sp-3];
+info: Executing (544282ff096576086fd0): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday] WHERE [Matchday].[matchTime] = N'07:00' AND [Matchday].[matchDay] = N'2025-07-31 00:00:00.000 +00:00' ORDER BY [Matchday].[id] OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
+info: Executing (544282ff096576086fd0): SAVE TRANSACTION [544282ff096576086fd0-sp-4];
+info: Executing (544282ff096576086fd0): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday] WHERE [Matchday].[matchTime] = N'02:30' AND [Matchday].[matchDay] = N'2025-08-04 00:00:00.000 +00:00' ORDER BY [Matchday].[id] OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
+info: Executing (544282ff096576086fd0): SAVE TRANSACTION [544282ff096576086fd0-sp-5];
+info: Executing (544282ff096576086fd0): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday] WHERE [Matchday].[matchTime] = N'17:15' AND [Matchday].[matchDay] = N'2025-08-09 00:00:00.000 +00:00' ORDER BY [Matchday].[id] OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
+info: Executing (544282ff096576086fd0): COMMIT TRANSACTION;
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'gopugopuz@gmail.com';
+info: Executing (bb8469a1078b5800c754): BEGIN TRANSACTION;
+info: Executing (bb8469a1078b5800c754): SAVE TRANSACTION [bb8469a1078b5800c754-sp-1];
+info: Executing (bb8469a1078b5800c754): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'gopugopuz2000@gmail.com';
+info: Executing (bb8469a1078b5800c754): COMMIT TRANSACTION;
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'gopugopuz2000@gmail.com';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'gopugopuz2000@gmail.com';
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'gopugopuz2000@gmail.com';
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [dateOfBirth], [name], [nationality], [position], [createdAt], [updatedAt] FROM [Squads] AS [Squad];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];

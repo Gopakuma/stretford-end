@@ -5,6 +5,7 @@ import NotificationSettings from './components/NotificationSettings';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import ProtectedRoute from './components/ProtectedRoute';
+import Squad from './components/Squad';
  
 
 function App() {
@@ -21,6 +22,11 @@ function App() {
         <Route path="/notificationSettings" element={
           <ProtectedRoute>
             <NotificationSettings />
+          </ProtectedRoute>
+        } />
+        <Route path="/squad" element={
+          <ProtectedRoute>
+            <Squad/>
           </ProtectedRoute>
         } />
       </Routes>

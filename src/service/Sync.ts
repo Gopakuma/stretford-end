@@ -9,7 +9,7 @@ class Sync {
 
     async refreshata() {
         try {
-            // await this.dataservice.syncSquadData();
+            await this.dataservice.syncSquadData();
             await this.dataservice.syncMatchdayData();
         } catch (error) {
             console.log(error);

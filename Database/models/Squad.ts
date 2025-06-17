@@ -63,7 +63,7 @@ Squad.init(
     }
 
 )
-Squad.sync({ force: true })
+Squad.sync({ force: false })
     .then(() => {
         console.log("Squad model synced successfully");
     })

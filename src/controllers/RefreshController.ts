@@ -11,8 +11,8 @@ class RefreshController {
 
     async refreshata(req: Request, res: Response) {
         try {
-            const data = await this.syncService.refreshata();
-            res.status(HttpStatusCode.Accepted).json({ data })
+            await this.syncService.refreshata();
+            res.status(HttpStatusCode.Ok).json({ data: "sucess" })
         } catch (error) {
             console.log(`$$ --${error} -- $$`);
             res.status(HttpStatusCode.InternalServerError).json({ "error": error.message })

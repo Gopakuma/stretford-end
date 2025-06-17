@@ -7,7 +7,8 @@ import { useAuth } from "./AuthProvider";
 function Login() {
   const { login, isAuthenticated } = useAuth(); 
   const navigate = useNavigate();
-  
+  const [status, setStatus] = useState();
+
   useEffect(() => {
     if(isAuthenticated) {
       navigate('/dashboard')
@@ -34,17 +35,16 @@ function Login() {
   const callLoginAPI = async () => {
     try {
       const res = await axios.post('http://localhost:3000/api/v1/users/login', formdata);
-      if (res.statusText == 'Accepted') {
-        setIsLoggedIn(true);
-        login(res.data.token)
-        localStorage.setItem(email,res.data.email)
-        localStorage.setItem(email,res.data.password)
+      if (res.status == 200) {
+        setIsLoggedIn(true);        
+        login(res.data['data'].token)
+        setStatus(true)
       } 
     } catch (error) {
       console.log(error);
+      setStatus(false);
     }
   }
-  console.log(formdata);
 
   function handleOnclick(e) {
     e.preventDefault();
@@ -57,6 +57,9 @@ function Login() {
 
   return (
     <>
+    <div>
+    LOGIN
+    </div>
       <form className='form' onSubmit={handleSubmit}>
         <label>Type your email here
           <input onChange={handleChange} name='email' type="text" />
@@ -64,9 +67,10 @@ function Login() {
         <label>Password
           <input onChange={handleChange} name='password' type="text" />
         </label>
-        <button onSubmit={handleSubmit}>DONE</button>
+        <button type="submit">DONE</button>
         <button onClick={handleOnclick}>Signup</button>
       </form>
+        {status === false && <div>Error signing up..</div>}
     </>
   )
 }

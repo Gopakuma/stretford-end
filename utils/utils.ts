@@ -86,23 +86,6 @@ export const getSquadData = async () => {
     return manUnitedData ? manUnitedData[0] : null;
 }
 
-// export const getPLmatchdays = async (teamId: number) => {
-//     const options = {
-//         method: "GET",
-//         url: `${FREE_API_CONFIG.matchdayURL}/${teamId}/matches?competitions=PL&season=2024`,
-//         headers: {
-//             "X-Auth-Token": FREE_API_CONFIG.X_Auth_Token,
-//             "Accept": "application/json",
-//             "Content-Type": "application/json",
-
-//         }
-//     }
-
-//     const data = await axios.request(options);
-//     console.log(data);
-//     return data;
-// }
-
 export const getmatchdays = async () => {
     try {
         const data = await Scrap.startScrap();

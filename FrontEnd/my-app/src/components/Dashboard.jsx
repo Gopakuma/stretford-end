@@ -1,23 +1,19 @@
-import { useNavigate } from 'react-router-dom';
 import './style/Dashboard.css'
-import LogoutButton from './LogoutButton';
+import LogoutButton from './Buttons/LogoutButton';
 import NewsFeed from './NewsFeed';
+import NotificationSettingsButton from './Buttons/NotificationSettingsButton';
+import SquadButton from './Buttons/SquadButton';
+import Matchday from './Matchday';
 
 function Dashboard() {
-    const navigate = useNavigate();
-    const handleOnClickNotification = (e) => {
-        e.preventDefault();
-        navigate('/notificationSettings')
-    }
-
     return (
         <>
-            <div className='menu'>
-                <button className='btn-notification' onClick={handleOnClickNotification}>
-                    notification settings
-                </button>
+            <div>
+                <NotificationSettingsButton/>
                 <LogoutButton/>
-                <NewsFeed/>
+                {/* <NewsFeed/> */}
+                <SquadButton/>
+                <Matchday/>
             </div>
         </>
     )

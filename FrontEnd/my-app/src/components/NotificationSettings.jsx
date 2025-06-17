@@ -1,15 +1,13 @@
 import React from 'react'
-import Backbutton from './Backbutton'
-import LogoutButton from './LogoutButton'
+import Backbutton from './Buttons/Backbutton'
+import LogoutButton from './Buttons/LogoutButton'
 
 function NotificationSettings() {
+
   return (
     <>
-    <div>
-      Notification Settings
-    </div>
-    <Backbutton path={'/dashboard'}/>
-    <LogoutButton/>
+      <Backbutton path={'/dashboard'} />
+      <LogoutButton />
     </>
   )
 }

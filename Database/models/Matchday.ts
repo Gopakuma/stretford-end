@@ -77,7 +77,7 @@ Matchday.init(
     }
 )
 
-Matchday.sync({ force: true })
+Matchday.sync({ force: false })
     .then(() => {
         console.log("Matchday model synced successfully");
     })

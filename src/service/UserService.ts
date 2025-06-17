@@ -1,10 +1,10 @@
 import { sequelize } from "../../Database/DB.js";
 import { callNodeMailerService, checkHashPassword, generateToken } from "../../utils/utils.js";
 import User from '../../Database/models/User.js';
-import { TResponseDTO } from "../../Types/CommonTypes.js";
+import { TUserResponseDTO } from "../../Types/CommonTypes.js";
 
 class UserService {
-    async signup(userDto: User): Promise<TResponseDTO> {
+    async signup(userDto: User): Promise<TUserResponseDTO> {
         if (!userDto || !userDto.email) {
             throw new Error("Invaild User data");
         }
@@ -18,7 +18,7 @@ class UserService {
                 transaction
             })
             await transaction.commit();
-            const response: TResponseDTO = {
+            const response: TUserResponseDTO = {
                 data: {
                     email: user.email,
                     username: user.username
@@ -57,7 +57,7 @@ class UserService {
         }
     }
 
-    async login(userDto: User): Promise<TResponseDTO> {
+    async login(userDto: User): Promise<TUserResponseDTO> {
         if (!userDto || !userDto.email) {
             throw new Error("Invaild User data");
         }
@@ -70,7 +70,7 @@ class UserService {
             const isMatch = await checkHashPassword(userDto, user.password);
             if (!isMatch) throw new Error("Invalid email or password");
 
-            const response: TResponseDTO = {
+            const response: TUserResponseDTO = {
                 data: {
                     email: user.email,
                     username: user.username

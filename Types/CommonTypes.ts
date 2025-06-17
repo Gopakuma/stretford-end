@@ -15,7 +15,7 @@ export type TconfigApi = {
     baseURL: string;
 }
 
-export interface TResponseDTO {
+export interface TUserResponseDTO {
     data?: {
         email: string,
         username: string,
@@ -23,3 +23,19 @@ export interface TResponseDTO {
     token?: string
     success?: boolean
 }
+
+export type TSquadResponseDTO = {
+    data: { name: string; nationality: string; position: string; }[];
+};
+
+export type TMatchdayDTO = {
+    matchDay: string;
+    matchTime: string;
+    home: string;
+    away: string;
+    status?: string;
+    result?: {
+        homeScore: number,
+        awayScore: number
+    }
+};

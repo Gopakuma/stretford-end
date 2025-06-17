@@ -10,13 +10,22 @@ class DataService {
         try {
             const data = await getSquadData();
             const { squad } = data;
-            await Squad.bulkCreate(squad, { transaction });
+
+            for (const item of squad) {
+                await Squad.findOrCreate({
+                    where: { name: item.name },
+                    defaults: item,
+                    transaction
+                })
+            }
+
             await transaction.commit();
         } catch (error) {
-            console.log(error);
+            console.error(error);
             await transaction.rollback();
         }
     }
+
 
     async syncMatchdayData() {
         const transaction = await sequelize.transaction();
@@ -26,14 +35,19 @@ class DataService {
 
             for (const item of matchDayData) {
                 const formattedMatchDay = this.formatDate(item.matchDay);
-                await Matchday.create(
-                    {
+                await Matchday.findOrCreate({
+                    where: {
+                        matchTime: item.matchTime,
+                        matchDay: new Date(formattedMatchDay)
+                    },
+                    defaults: {
                         matchDay: new Date(formattedMatchDay),
                         matchTime: item.matchTime,
                         home: item.teams[0],
                         away: item.teams[1]
-                    }
-                );
+                    },
+                    transaction
+                });
             }
             await transaction.commit();
         } catch (error) {

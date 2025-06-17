@@ -14,7 +14,7 @@ class UserController {
         try {
             const userDto: User = req.body;
             const response = await this.userService.signup(userDto);
-            res.status(HttpStatusCode.Accepted).json({ response })
+            res.status(HttpStatusCode.Ok).json({ response })
         } catch (error) {
             console.log(`$$ --${error} -- $$`);
             res.status(HttpStatusCode.InternalServerError).json({ "error": error.message })
@@ -25,7 +25,7 @@ class UserController {
         try {
             const userDto: User = req.body;
             const data = await this.userService.login(userDto);
-            res.status(HttpStatusCode.Accepted).json({ data })
+            res.status(HttpStatusCode.Ok).json({ data })
         } catch (error) {
             console.log(`$$ --${error} -- $$`);
             res.status(HttpStatusCode.InternalServerError).json({ "error": error.message })
@@ -36,7 +36,7 @@ class UserController {
         try {
             const userDto: User = req.body;
             await this.userService.deleteUser(userDto);
-            res.status(HttpStatusCode.Accepted).json({ userDto })
+            res.status(HttpStatusCode.Ok).json({ userDto })
         } catch (error) {
             console.log(`$$ --${error} -- $$`);
             res.status(HttpStatusCode.InternalServerError).json({ "error": error.message })
@@ -48,7 +48,7 @@ class UserController {
         try {
             const userDto: User = req.body;
             await this.userService.notification(userDto);
-            res.status(HttpStatusCode.Accepted).json({ userDto })
+            res.status(HttpStatusCode.Ok).json({ userDto })
         } catch (error) {
             console.log(`$$ --${error} -- $$`);
             res.status(HttpStatusCode.InternalServerError).json({ "error": error.message })
