@@ -6,12 +6,13 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import ProtectedRoute from './components/ProtectedRoute';
 import Squad from './components/Squad';
+import { AuthProvider } from './components/AuthProvider';
  
 
 function App() {
   return (
-    <>
-      <Routes>
+     <AuthProvider>
+     <Routes>
         <Route path="/" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={
@@ -30,7 +31,7 @@ function App() {
           </ProtectedRoute>
         } />
       </Routes>
-    </>
+     </AuthProvider>
   )
 
 }

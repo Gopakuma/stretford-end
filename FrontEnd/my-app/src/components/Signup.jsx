@@ -3,77 +3,99 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "./AuthProvider";
 
+// Use environment variables
+const API_BASE = import.meta.env.VITE_API_BASE_URL;
+const API_SIGNUP = import.meta.env.VITE_API_SIGNUP;
 
 function Signup() {
-  const navigate = useNavigate();
-  const { login, isAuthenticated } = useAuth(); 
+    const navigate = useNavigate();
+    const { isAuthenticated, login } = useAuth();
+    const [error, setError] = useState(null);
 
-  const [status, setStatus] = useState();
+    const [formdata, setFormdata] = useState({
+        email: '',
+        username: '',
+        password: ''
+    });
 
-  useEffect(() => {
-    if(isAuthenticated) {
-      navigate('/dashboard')
+    const handleChange = (e) => {
+        setFormdata({ ...formdata, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        callSignupAPI();
     }
-  }, [navigate, isAuthenticated])
-
-  const [formdata, setFormdata] = useState({
-    email: '',
-    username: ''
-  })
-
-  const handleChange = (e) => {
-    setFormdata({ ...formdata, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    callSignupAPI();
-  }
-
-  const callSignupAPI = async () => {
-    try {      
-      const res = await axios.post('http://localhost:3000/api/v1/users/signup', formdata);
-      if(res.status === 200){
-        navigate('/dashboard');
-        login(res.data['response'].token);
-        setStatus(true);
+    
+    useEffect(() => {
+      if(isAuthenticated){
+        navigate('/dashboard')
       }
-      console.log(res);
-    } catch (error) {
-      navigate('/');
-      console.log(error);
-      setStatus(false);
+    },[isAuthenticated])
+
+    const callSignupAPI = async () => {
+        try {
+            const res = await axios.post(`${API_BASE}${API_SIGNUP}`, formdata);
+            
+            if (res.status === 200) {
+                login(res.data.response.token);
+                navigate('/dashboard');
+            }
+        } catch (error) {
+            setError(error.response?.data?.message || "Signup failed. Please try again.");
+        }
     }
-  }
 
-  function handleOnclick(e) {
-    e.preventDefault();
-    navigate('/login');
-  }
-
-
-  return (
-    <>
-    <div>
-      signup
-    </div>
-      <form className='form' onSubmit={handleSubmit}>
-        <label>Type your email here
-          <input onChange={handleChange} name='email' type="text" />
-        </label>
-        <label>User Name
-          <input onChange={handleChange} name='username' type="text" />
-        </label>
-        <label>Password
-          <input onChange={handleChange} name='password' type="text" />
-        </label>
-        <button type='submit'>DONE</button>
-        <button onClick={handleOnclick}>Login</button>
-        {status === false && <div>Error signing up. {error}.</div>}
-
-      </form>
-    </>
-  )
+    return (
+        <div className="signup-container">
+            <h1>Sign Up</h1>
+            <form className='form' onSubmit={handleSubmit}>
+                <label>
+                    Email:
+                    <input 
+                        onChange={handleChange} 
+                        name='email' 
+                        type="email" 
+                        required 
+                    />
+                </label>
+                
+                <label>
+                    Username:
+                    <input 
+                        onChange={handleChange} 
+                        name='username' 
+                        type="text" 
+                        required 
+                    />
+                </label>
+                
+                <label>
+                    Password:
+                    <input 
+                        onChange={handleChange} 
+                        name='password' 
+                        type="password" 
+                        required 
+                        minLength={6}
+                    />
+                </label>
+                
+                <div className="button-group">
+                    <button type='submit'>Sign Up</button>
+                    <button 
+                        type="button" 
+                        className="secondary"
+                        onClick={() => navigate('/login')}
+                    >
+                        Already have an account? Login
+                    </button>
+                </div>
+                
+                {error && <div className="error-message">{error}</div>}
+            </form>
+        </div>
+    )
 }
 
 export default Signup;

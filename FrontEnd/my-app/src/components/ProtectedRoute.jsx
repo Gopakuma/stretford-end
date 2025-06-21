@@ -10,8 +10,8 @@ function ProtectedRoute({ children }) {
         if (!isAuthenticated) {
             navigate("/login");
         }
-      }, [isAuthenticated, navigate]);
-    
+    }, [isAuthenticated, navigate]);
+
     return isAuthenticated ? children : null;
 }
 
