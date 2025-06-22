@@ -1,5 +1,5 @@
-import { createContext, useState, useContext, useEffect, useCallback } from "react";
-import jwt_decode from "jwt-decode";
+import { createContext, useState, useContext, useEffect, useCallback, useRef } from "react";
+import {jwtDecode} from 'jwt-decode'; 
 
 const AuthContext = createContext();
 
@@ -23,7 +23,7 @@ export function AuthProvider({ children }) {
         
         try {
             // Decode token to get expiration time
-            const decoded = jwt_decode(token);
+            const decoded = jwtDecode(token);
             const expiresAt = decoded.exp * 1000; // Convert to milliseconds
             const currentTime = Date.now();
             const timeout = expiresAt - currentTime;
