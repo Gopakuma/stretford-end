@@ -108,6 +108,7 @@ function Signup() {
               onClick={() => {
                 setError(false)
                 setIsLoading(false)
+                setFormdata({...formdata, username : '', password: ''})
               }}
             >
               RESET

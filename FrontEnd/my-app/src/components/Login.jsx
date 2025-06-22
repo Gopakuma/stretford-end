@@ -70,6 +70,7 @@ function Login() {
               type="email"
               required
               placeholder="you@example.com"
+              value={formdata.email}
             />
           </div>
           
@@ -82,6 +83,7 @@ function Login() {
               type="password"
               required
               placeholder="Enter your password"
+              value={formdata.password}
             />
           </div>
           
@@ -101,8 +103,11 @@ function Login() {
               type="button"
               className="btn secondary"
               onClick={() => {
-                setFormdata({ email: '', password: '' });
-                setError(null);
+                setFormdata({
+                  email: '',
+                  password: ''
+                });
+                setError(null);              
               }}
             >
               RESET
@@ -119,10 +124,6 @@ function Login() {
           
           {error && <div className="error-message">{error}</div>}
         </form>
-        
-        <div className="form-footer">
-          <p>GLORY GLORY MAN UNITED</p>
-        </div>
       </div>
     </div>
   );
