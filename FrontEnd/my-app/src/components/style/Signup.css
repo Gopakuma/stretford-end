@@ -68,12 +68,12 @@ input {
 
 
 .error-message {
-    color: #d32f2f;
+    color: #ffd500;
     padding: 0.8rem;
     border-radius: 4px;
     margin-top: 1rem;
     text-align: center;
-    background: #ff0f33;
+    background: #a5b400;
 }
 
 .form-footer {

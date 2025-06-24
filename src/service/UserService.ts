@@ -2,6 +2,8 @@ import { sequelize } from "../../Database/DB.js";
 import { callNodeMailerService, checkHashPassword, generateToken } from "../../utils/utils.js";
 import User from '../../Database/models/User.js';
 import { TUserResponseDTO } from "../../Types/CommonTypes.js";
+import { Op } from "sequelize";
+import validator, { isLowercase } from "validator";
 
 class UserService {
     async signup(userDto: User): Promise<TUserResponseDTO> {
@@ -9,22 +11,57 @@ class UserService {
             throw new Error("Invaild User data");
         }
 
+        if (!validator.isEmail(userDto.email)) {
+            throw new Error("Invaild Email");
+        }
+
+        if (userDto.password.length < 6) {
+            throw new Error("Password too short");
+        }
+
         const transaction = await sequelize.transaction();
 
         try {
-            const [user, created] = await User.findOrCreate({
-                where: { email: userDto.email },
-                defaults: userDto,
+            const existingUser = await User.findOne({
+                where: {
+                    [Op.or]: {
+                        email: userDto.email,
+                        username: userDto.username
+                    }
+                },
                 transaction
             })
+
+            if (existingUser) {
+                let message = 'User Already Exist';
+                if (existingUser.email == userDto.email) {
+                    message = 'Email already exist';
+                } else if (existingUser.username == userDto.username) {
+                    message = 'Username Already exist'
+                }
+                const response: TUserResponseDTO = {
+                    email: existingUser.email,
+                    username: existingUser.username,
+                    message,
+                    success: false
+                }
+
+                return response;
+            }
+
+            const user = await User.create({
+                email: userDto.email.toLowerCase(),
+                password: userDto.password,
+                username: userDto.username.toLowerCase()
+            }, { transaction })
+
             await transaction.commit();
+
             const response: TUserResponseDTO = {
-                data: {
-                    email: user.email,
-                    username: user.username
-                },
+                email: user.email,
+                username: user.username,
                 token: generateToken(user.id),
-                success: created
+                success: true
             }
 
             return response;
@@ -71,10 +108,8 @@ class UserService {
             if (!isMatch) throw new Error("Invalid email or password");
 
             const response: TUserResponseDTO = {
-                data: {
-                    email: user.email,
-                    username: user.username
-                },
+                email: user.email,
+                username: user.username,
                 token: generateToken(user.id),
                 success: isMatch
             }

@@ -2,14 +2,16 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import './style/Signup.css'
+import { useAuth } from "./AuthProvider";
 
 function Signup() {
   const navigate = useNavigate();
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const { login } = useAuth();
 
   const API_BASE = import.meta.env.VITE_API_BASE_URL;
-  const API_SIGNUP = import.meta.env.VITE_API_LOGIN;
+  const API_SIGNUP = import.meta.env.VITE_API_SIGNUP;
   const signUpEndpoint = `${API_BASE}${API_SIGNUP}`;
 
 
@@ -20,7 +22,7 @@ function Signup() {
   });
 
   const handleChange = (e) => {
-    setFormdata({ ...formdata, [e.target.name]: e.target.value });
+    setFormdata({ ...formdata, [e.target.name]: e.target.value});
     setError(null);
   };
 
@@ -33,14 +35,24 @@ function Signup() {
   const callSignupAPI = async () => {
     try {
         const res = await axios.post(signUpEndpoint, formdata);
-        
+        console.log(res.status, "res.status");
         if (res.status === 200) {
-            login(res.data.response.token);
-            navigate('/dashboard');
-            setIsLoading(false);
+          console.log(res, "res.data");
+            if(res.data.success == true) {
+              login(res.data.token);
+              navigate('/dashboard');
+              setIsLoading(false);
+            } else {
+              console.log(res.data.message, "res.data.message,");
+              setError(res.data.message ? `${res.data.message}` : "User Already exist. Please login");
+              setIsLoading(false);
+            }
         }
     } catch (error) {
+        
+        console.log(error);
         setError(error.response?.data?.message || "Signup failed. Please try again.");
+        setIsLoading(false);
     }
 }
   
@@ -62,6 +74,7 @@ function Signup() {
               type="email"
               required
               placeholder="you@example.com"
+              value={formdata.email}
             />
           </div>
           
@@ -74,6 +87,7 @@ function Signup() {
               type="text"
               required
               placeholder="Choose a username"
+              value={formdata.username}
             />
           </div>
           
@@ -87,6 +101,7 @@ function Signup() {
               required
               minLength={6}
               placeholder="At least 6 characters"
+              value={formdata.password}
             />
           </div>
           
@@ -108,7 +123,7 @@ function Signup() {
               onClick={() => {
                 setError(false)
                 setIsLoading(false)
-                setFormdata({...formdata, username : '', password: ''})
+                setFormdata({...formdata, username : '', password: '', email: ''})
               }}
             >
               RESET

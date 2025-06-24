@@ -16,10 +16,9 @@ export type TconfigApi = {
 }
 
 export interface TUserResponseDTO {
-    data?: {
-        email: string,
-        username: string,
-    }
+    email: string,
+    username: string,
+    message?: string,
     token?: string
     success?: boolean
 }

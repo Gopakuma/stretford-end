@@ -7,6 +7,7 @@ import Login from './components/Login';
 import ProtectedRoute from './components/ProtectedRoute';
 import Squad from './components/Squad';
 import { AuthProvider } from './components/AuthProvider';
+import Matchday from './components/Matchday';
  
 
 function App() {
@@ -28,6 +29,11 @@ function App() {
         <Route path="/squad" element={
           <ProtectedRoute>
             <Squad/>
+          </ProtectedRoute>
+        } />
+         <Route path="/matchday" element={
+          <ProtectedRoute>
+            <Matchday/>
           </ProtectedRoute>
         } />
       </Routes>

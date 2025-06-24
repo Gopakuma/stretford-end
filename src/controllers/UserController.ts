@@ -14,7 +14,7 @@ class UserController {
         try {
             const userDto: User = req.body;
             const response = await this.userService.signup(userDto);
-            res.status(HttpStatusCode.Ok).json({ response })
+            res.status(HttpStatusCode.Ok).json(response)
         } catch (error) {
             console.log(`$$ --${error} -- $$`);
             res.status(HttpStatusCode.InternalServerError).json({ "error": error.message })
