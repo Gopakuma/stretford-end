@@ -8,7 +8,7 @@ function Signup() {
   const navigate = useNavigate();
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const { login } = useAuth();
+  const { login, isAuthenticated } = useAuth();
 
   const API_BASE = import.meta.env.VITE_API_BASE_URL;
   const API_SIGNUP = import.meta.env.VITE_API_SIGNUP;
@@ -20,6 +20,12 @@ function Signup() {
     username: '',
     password: ''
   });
+
+  useEffect(() => {
+    if(isAuthenticated) {
+      navigate('/dashboard')
+    }
+  },[navigate, isAuthenticated])
 
   const handleChange = (e) => {
     setFormdata({ ...formdata, [e.target.name]: e.target.value});

@@ -347,3 +347,283 @@ info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away],
 info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'admin123@gmail.com';
 info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
 info: Executing (default): SELECT [id], [matchDay], [matchTime], [home], [away], [status], [createdAt], [updatedAt] FROM [Matchdays] AS [Matchday];
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'admin@gmail.com';
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'admin@gmail.com';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'admin@gmail.com';
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'admin@gmail.com';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'admin@gmail.com';
+info: Executing (6e6143fbecf4212daf0d): BEGIN TRANSACTION;
+info: Executing (6e6143fbecf4212daf0d): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE ([User].[email] = N'gopugopuz2000@gmail.com' OR [User].[username] = N'manunited') ORDER BY [User].[id] OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
+info: Executing (6e6143fbecf4212daf0d): INSERT INTO [Users] ([username],[email],[password],[createdAt],[updatedAt]) OUTPUT INSERTED.[id],INSERTED.[username],INSERTED.[email],INSERTED.[password],INSERTED.[createdAt],INSERTED.[updatedAt] VALUES (@0,@1,@2,@3,@4);
+info: Executing (6e6143fbecf4212daf0d): COMMIT TRANSACTION;
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT 1+1 AS result
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Users' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Users]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Squads' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Squads]';
+info: Executing (default): SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = N'Matchdays' AND TABLE_SCHEMA = N'dbo'
+info: Executing (default): EXEC sys.sp_helpindex @objname = N'[Matchdays]';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'gopugopuz2000@gmail.com';
+info: Executing (default): SELECT [id], [username], [email], [password], [createdAt], [updatedAt] FROM [Users] AS [User] WHERE [User].[email] = N'admin@gmail.com';

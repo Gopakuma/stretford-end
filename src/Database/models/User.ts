@@ -1,23 +1,14 @@
-import { DataTypes, Model } from "sequelize";
+import { DataTypes, Model, InferAttributes, InferCreationAttributes, CreationOptional } from "sequelize";
 import { sequelize } from "../DB.js";
 import { hashPassword } from '../../utils/utils.js';
 
-interface UserAttributes {
-    id: number;
-    username: string;
-    email: string;
-    password: string;
-    createdAt?: Date;
-    updatedAt?: Date;
-}
-
-class User extends Model<UserAttributes> implements UserAttributes {
-    public id!: number;
-    public username!: string;
-    public email!: string;
-    public password!: string;
-    public readonly createdAt!: Date;
-    public readonly updatedAt!: Date;
+class User extends Model<InferAttributes<User>, InferCreationAttributes<User>> {
+    declare id: CreationOptional<number>;
+    declare username: string;
+    declare email: string;
+    declare password: string;
+    declare createdAt: CreationOptional<Date>;
+    declare updatedAt: CreationOptional<Date>;
 }
 
 User.init(
@@ -43,12 +34,12 @@ User.init(
         },
         createdAt: {
             type: DataTypes.DATE,
-            allowNull: true,
+            allowNull: false,
             defaultValue: DataTypes.NOW,
         },
         updatedAt: {
             type: DataTypes.DATE,
-            allowNull: true,
+            allowNull: false,
             defaultValue: DataTypes.NOW,
         },
     },
@@ -57,12 +48,13 @@ User.init(
         tableName: "Users",
         timestamps: true,
         hooks: {
-            beforeCreate: async (user: any) => {
+            beforeCreate: async (user: User) => {
                 user.password = await hashPassword(user);
             },
         },
     }
 );
+
 
 
 User.sync({ force: false })

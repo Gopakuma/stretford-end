@@ -1,5 +1,5 @@
-import Squad from "../../Database/models/Squad.js";
-import { TSquadResponseDTO } from "../../Types/CommonTypes.js";
+import Squad from "../Database/models/Squad.js";
+import { TSquadResponseDTO } from "../Types/CommonTypes.js";
 
 class SquadService {
     async getSquadData(): Promise<TSquadResponseDTO> {

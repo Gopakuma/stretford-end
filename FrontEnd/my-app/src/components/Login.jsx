@@ -19,7 +19,6 @@ function Login() {
     password: ''
   });
 
-  // Redirect if already authenticated
   useEffect(() => {
     if(isAuthenticated) {
       navigate('/dashboard');

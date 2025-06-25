@@ -1,7 +1,7 @@
-import { sequelize } from "../../Database/DB.js";
-import { callNodeMailerService, checkHashPassword, generateToken } from "../../utils/utils.js";
-import User from '../../Database/models/User.js';
-import { TUserResponseDTO } from "../../Types/CommonTypes.js";
+import { sequelize } from "../Database/DB.js";
+import { checkHashPassword, generateToken } from "../utils/utils.js";
+import User from '../Database/models/User.js';
+import { TUserResponseDTO } from "../Types/CommonTypes.js";
 import { Op } from "sequelize";
 import validator, { isLowercase } from "validator";
 
@@ -100,9 +100,13 @@ class UserService {
         }
 
         try {
-            const user: User = await User.findOne({
+            const user = await User.findOne({
                 where: { email: userDto.email },
             });
+
+            if (!user) {
+                throw Error;
+            }
 
             const isMatch = await checkHashPassword(userDto, user.password);
             if (!isMatch) throw new Error("Invalid email or password");
@@ -121,11 +125,11 @@ class UserService {
         }
     }
 
-    async notification(userDto: User): Promise<Boolean> {
-        const res = callNodeMailerService(userDto);
-        console.log(res);
-        return true;
-    }
+    // async notification(userDto: User): Promise<Boolean> {
+    //     const res = callNodeMailerService(userDto);
+    //     console.log(res);
+    //     return true;
+    // }
 
 }
 

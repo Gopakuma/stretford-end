@@ -1,7 +1,7 @@
-import { sequelize } from "../../Database/DB.js";
-import Squad from "../../Database/models/Squad.js";
-import Matchday from "../../Database/models/Matchday.js";
-import { getmatchdays, getSquadData } from "../../utils/utils.js";
+import { sequelize } from "../Database/DB.js";
+import Squad from "../Database/models/Squad.js";
+import Matchday from "../Database/models/Matchday.js";
+import { getmatchdays, getSquadData } from "../utils/utils.js";
 
 class DataService {
 
@@ -31,6 +31,9 @@ class DataService {
         const transaction = await sequelize.transaction();
         try {
             const matchDayData = await getmatchdays();
+            if (!matchDayData) {
+                return;
+            }
             console.log(matchDayData);
 
             for (const item of matchDayData) {

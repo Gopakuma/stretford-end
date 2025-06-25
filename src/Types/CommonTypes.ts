@@ -28,10 +28,10 @@ export type TSquadResponseDTO = {
 };
 
 export type TMatchdayDTO = {
-    matchDay: string;
-    matchTime: string;
-    home: string;
-    away: string;
+    matchDay: string | null;
+    matchTime: string | null;
+    home: string | null;
+    away: string | null;
     status?: string;
     result?: {
         homeScore: number,

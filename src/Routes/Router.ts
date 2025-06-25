@@ -1,8 +1,8 @@
 import config from 'config';
-import { TconfigApi } from "../../Types/CommonTypes.js";
+import { TconfigApi } from "../Types/CommonTypes.js";
 import { Router } from 'express';
 import UserController from '../controllers/UserController.js';
-import { authenticateJWT } from "../../middlewares/AuthJWT.js";
+import { authenticateJWT } from "../middlewares/AuthJWT.js";
 import DataController from '../controllers/RefreshController.js';
 import SquadController from '../controllers/SquadController.js';
 import MatchdayController from '../controllers/MatchdayController.js';
@@ -34,7 +34,7 @@ class Routes {
 
         //DashBoard
         this.router.delete(`${baseURL}/dashboard`, authenticateJWT, (req, res) => this.userController.deleteUser(req, res))
-        this.router.post(`${baseURL}/notification`, authenticateJWT, (req, res) => this.userController.notification(req, res))
+        // this.router.post(`${baseURL}/notification`, authenticateJWT, (req, res) => this.userController.notification(req, res))
 
         //Data Sync
         this.router.get(`${baseURL}/refresh`, (req, res) => this.dataController.refreshata(req, res))

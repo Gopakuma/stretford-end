@@ -2,7 +2,7 @@ import bcrypt from 'bcrypt';
 import config from 'config';
 import User from '../Database/models/User.js';
 import jwt from "jsonwebtoken";
-import nodemailer from 'nodemailer';
+// import nodemailer from 'nodemailer';
 import axios from 'axios';
 import Scrap from './Scrap.js';
 
@@ -44,28 +44,28 @@ export const verifyToken = (token: string): any => {
     }
 };
 
-export const callNodeMailerService = (userDto: User) => {
-    const transporter = nodemailer.createTransport({
-        host: 'live.smtp.mailtrap.io',
-        port: 587,
-        secure: false, // use SSL
-        auth: {
-            user: 'smtp@mailtrap.io',
-            pass: '15d96ec78ec9fd6badac06047be16645',
-        }
-    });
+// export const callNodeMailerService = (userDto: User) => {
+//     const transporter = nodemailer.createTransport({
+//         host: 'live.smtp.mailtrap.io',
+//         port: 587,
+//         secure: false, // use SSL
+//         auth: {
+//             user: 'smtp@mailtrap.io',
+//             pass: '15d96ec78ec9fd6badac06047be16645',
+//         }
+//     });
 
-    // Configure the mailoptions object
-    const mailOptions = {
-        from: 'hello@demomailtrap.co',
-        to: userDto.email,
-        subject: 'Sending Email using Node.js',
-        text: 'That was easy!'
-    };
+//     // Configure the mailoptions object
+//     const mailOptions = {
+//         from: 'hello@demomailtrap.co',
+//         to: userDto.email,
+//         subject: 'Sending Email using Node.js',
+//         text: 'That was easy!'
+//     };
 
-    // Send the email
-    transporter.sendMail(mailOptions);
-}
+//     // Send the email
+//     transporter.sendMail(mailOptions);
+// }
 
 const FREE_API_CONFIG: any = config.get("FreeAPI");
 
@@ -81,7 +81,7 @@ export const getSquadData = async () => {
         },
     };
     const data: any = await axios.request(options);
-    const manUnitedData = data.data.teams.filter(data => data.name == 'Manchester United FC');
+    const manUnitedData = data.data.teams.filter((data: { name: string; }) => data.name == 'Manchester United FC');
     console.log(manUnitedData);
     return manUnitedData ? manUnitedData[0] : null;
 }

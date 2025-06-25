@@ -1,16 +1,5 @@
 import { sequelize } from "../DB.js";
-import { DataTypes, Model } from "sequelize";
-
-interface MatchdayAttributes {
-    id: number;
-    matchDay: Date;
-    matchTime: string;
-    home: string;
-    away: string;
-    status: string;
-    createdAt: Date;
-    updatedAt: Date;
-}
+import { DataTypes, Model, InferAttributes, InferCreationAttributes, CreationOptional } from "sequelize";
 
 enum MatchStatus {
     NOT_STARTED = "NOT_STARTED",
@@ -18,16 +7,18 @@ enum MatchStatus {
     NO_RESULT = "NO_RESULT"
 }
 
-
-class Matchday extends Model<MatchdayAttributes> implements MatchdayAttributes {
-    public id!: number;
-    public matchDay!: Date;
-    public matchTime!: string;
-    public home!: string;
-    public away!: string;
-    public status!: string;
-    public readonly createdAt!: Date;
-    public readonly updatedAt!: Date;
+class Matchday extends Model<
+    InferAttributes<Matchday>,
+    InferCreationAttributes<Matchday, { omit: 'id' | 'createdAt' | 'updatedAt' }>
+> {
+    declare id: CreationOptional<number>;
+    declare matchDay: Date | null;
+    declare matchTime: string | null;
+    declare home: string | null;
+    declare away: string | null;
+    declare status: CreationOptional<string>;
+    declare createdAt: CreationOptional<Date>;
+    declare updatedAt: CreationOptional<Date>;
 }
 
 Matchday.init(
@@ -75,7 +66,7 @@ Matchday.init(
         timestamps: true,
         indexes: [{ fields: ["matchDay"] }]
     }
-)
+);
 
 Matchday.sync({ force: false })
     .then(() => {

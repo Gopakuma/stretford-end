@@ -15,7 +15,7 @@ class RefreshController {
             res.status(HttpStatusCode.Ok).json({ data: "sucess" })
         } catch (error) {
             console.log(`$$ --${error} -- $$`);
-            res.status(HttpStatusCode.InternalServerError).json({ "error": error.message })
+            res.status(HttpStatusCode.InternalServerError).json({ "error": error })
         }
     }
 }
