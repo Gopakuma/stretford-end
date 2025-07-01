@@ -1,11 +1,14 @@
 .profile-container {
     display: flex;
-    cursor: pointer;
     margin-top: 1rem;
 }
 
 .profile-name{
     margin-left: 1rem;
+}
+
+.name, .img {
+    cursor: pointer;
 }
 
 .menu-container {

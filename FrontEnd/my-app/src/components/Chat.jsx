@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
+import { useAuth } from './AuthProvider';
 
 const Chat = () => {
+    const {user} = useAuth();
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState('');
-    const [sender, setSender] = useState('User' + Math.floor(Math.random() * 1000));
+    const [sender, setSender] = useState(user);
     const [group, setGroup] = useState('community');
     const wsRef = useRef(null);
 

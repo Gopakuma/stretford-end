@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import './style/squad.css'
 
 function Squad() {
     const [squadData, setSquadData] = useState([]);
-    const [status, setStatus] = useState();
+    const [status, setStatus] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -16,10 +17,10 @@ function Squad() {
                     }
                 });
                 if(res.status === 200) {
-                    setSquadData(res.data.data);    
-                    setStatus(true);            
+                    setSquadData(res.data.data);  
+                    setStatus(false);            
                 } else {
-                    setStatus(false);   
+                    setStatus(true);   
                 }
 
             } catch (error) {
@@ -28,23 +29,24 @@ function Squad() {
         };
         
         fetchData();
-    }, [squadData]);
+    }, []);
 
     return (
-        <div>
-            {squadData.length > 0 ? (
-                squadData.map((player, index) => (
-                    <div key={index}>
-                        <h3>{player.name}</h3>
-                        <p>{player.position}</p>
-                        <p>{player.nationality}</p>
-                    </div>
-                ))
-            ) : (
-                <p>Loading squad data...</p>
-            )}
-        {status ? <div> Error </div> : ''}
-        </div>
+        <div className="grid-container">
+        {squadData.length > 0 ? (
+          squadData.map((player, index) => (
+            <div key={index} className="player-card">
+              <h3>{player.name}</h3>
+              <p>{player.position}</p>
+              <p>{player.nationality}</p>
+            </div>
+          ))
+        ) : (
+          <p>Loading squad data...</p>
+        )}
+        {status ? <div className="status-error">Error</div> : ''}
+      </div>
+      
     );
 }
 

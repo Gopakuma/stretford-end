@@ -33,7 +33,7 @@ function Matchday() {
     }, []);
 
     return (
-        <div className="matchday-container">
+        <div className="grid-container">
             {status === 'error' && <div className="error-message">Error fetching data!</div>}
             {status === 'success' ? (
                 matchdayData.length > 0 ? (
@@ -43,9 +43,6 @@ function Matchday() {
                             <p className="match-time">{item.matchTime}</p>
                             <p className="match-teams">{item.home} : 0 </p>
                             <p className="match-teams">{item.away} : 0 </p>
-                        <>
-                        Predict
-                        </>
                         </div>
                     ))
                 ) : (

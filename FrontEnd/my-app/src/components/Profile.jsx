@@ -15,11 +15,13 @@ function Profile() {
   return (
     <>
     <div className='profile-container'> 
-        <div className='profile-icon' onClick={handleToggle}>
-            <img src={img}></img>
+        <div className='profile-icon'>
+            <img className='img' onClick={handleToggle} src={img}></img>
         </div>
-        <div className='profile-name' onClick={handleToggle}>
+        <div className='profile-name'>
+            <div className='name' onClick={handleToggle}>
             {user}
+            </div>
         </div>
     </div>
     <div className='menu-container'>
