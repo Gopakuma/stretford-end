@@ -41,7 +41,8 @@ function Login() {
       const res = await axios.post(loginEndpoint, formdata);
       
       if (res.status === 200) {
-        login(res.data.data.token);
+        console.log(res.data);   
+        login(res.data);
         navigate('/dashboard');
       } 
     } catch (error) {

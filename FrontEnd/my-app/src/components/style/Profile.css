@@ -1,0 +1,36 @@
+.profile-container {
+    display: flex;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.profile-name{
+    margin-left: 1rem;
+}
+
+.menu-container {
+    position: absolute;
+    margin-left: 31rem;
+    margin-top: 2rem;
+}
+
+.menu-list {
+    list-style: none;
+    margin: 10px;
+}
+
+.logout-button {
+    background: #dc3545;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .logout-button:hover {
+    background: #a71d2a;
+  }

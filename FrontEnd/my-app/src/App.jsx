@@ -8,7 +8,8 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Squad from './components/Squad';
 import { AuthProvider } from './components/AuthProvider';
 import Matchday from './components/Matchday';
- 
+import Profile from './components/Profile';
+import './components/style/App.css'
 
 function App() {
   return (
@@ -18,7 +19,10 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={
           <ProtectedRoute>
+            <div className='dashborad-container'>
             <Dashboard />
+            <Profile/>
+            </div>
           </ProtectedRoute>
         } />
         <Route path="/notificationSettings" element={

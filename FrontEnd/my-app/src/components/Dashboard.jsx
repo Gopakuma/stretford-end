@@ -1,6 +1,4 @@
 import './style/Dashboard.css'
-import LogoutButton from './Buttons/LogoutButton';
-import NewsFeed from './NewsFeed';
 import NotificationSettingsButton from './Buttons/NotificationSettingsButton';
 import SquadButton from './Buttons/SquadButton';
 import MatchdayButton from './Buttons/MatchdayButton';
@@ -11,7 +9,6 @@ function Dashboard() {
         <>
             <div>
                 <NotificationSettingsButton/>
-                <LogoutButton/>
                 {/* <NewsFeed/> */}
                 <SquadButton/>
                 <MatchdayButton/>

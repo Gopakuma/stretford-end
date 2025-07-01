@@ -7,6 +7,7 @@ export function AuthProvider({ children }) {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const logoutTimerRef = useRef(null); 
     const [token, setToken] = useState(null);
+    const [user, setUser] = useState(null);
 
     const logout = useCallback(() => {
         localStorage.removeItem('token');
@@ -17,10 +18,11 @@ export function AuthProvider({ children }) {
         }
     }, []);
 
-    const login = useCallback((token) => {
+    const login = useCallback(({username ,token}) => {
         localStorage.setItem('token', token);
         setToken(token);
         setIsAuthenticated(true);
+        setUser(username);
         
         try {
             const decoded = jwtDecode(token);
@@ -84,7 +86,7 @@ export function AuthProvider({ children }) {
     }, [token ,logout]);
 
     return (
-        <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+        <AuthContext.Provider value={{ isAuthenticated, login, logout, user }}>
             {children}
         </AuthContext.Provider>
     );
